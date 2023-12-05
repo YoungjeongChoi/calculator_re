@@ -1,6 +1,5 @@
 package com.example.calculator_re
 
-import kotlin.math.round
 
 class DevideOperation: AbstractOperation() {
     @Throws (ArithmeticException::class)
@@ -8,6 +7,7 @@ class DevideOperation: AbstractOperation() {
         require(num2 != 0.0) {
             ArithmeticException("Devide by Zero")
         }
-        return round((num1 * 100)/num2) /100
+        return String.format("%.3f", (num1/num2)).toDouble()
+
     }
 }
